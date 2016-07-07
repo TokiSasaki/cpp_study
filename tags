@@ -1,0 +1,33 @@
+!_TAG_FILE_FORMAT	2	/extended format; --format=1 will not append ;" to lines/
+!_TAG_FILE_SORTED	1	/0=unsorted, 1=sorted, 2=foldcase/
+!_TAG_PROGRAM_AUTHOR	Darren Hiebert	/dhiebert@users.sourceforge.net/
+!_TAG_PROGRAM_NAME	Exuberant Ctags	//
+!_TAG_PROGRAM_URL	http://ctags.sourceforge.net	/official site/
+!_TAG_PROGRAM_VERSION	5.8	//
+ADDNAME	C:\Users\tokixy56\cpp_study/inc.mak	/^ADDNAME	= $(ARCH)-$/;"	m
+AR	C:\Users\tokixy56\cpp_study/inc.mak	/^AR		= $(ADDNAME)ar$/;"	m
+ARCH	C:\Users\tokixy56\cpp_study/inc.mak	/^ARCH	= x86_64-w64-mingw32$/;"	m
+AS	C:\Users\tokixy56\cpp_study/inc.mak	/^AS		= $(ADDNAME)as$/;"	m
+Algorythm	C:\Users\tokixy56\cpp_study/Sorter/Sorter.cpp	/^Algorythm::Algorythm()$/;"	f	class:Algorythm
+Algorythm	C:\Users\tokixy56\cpp_study/Sorter/Sorter.cpp	/^Algorythm::Algorythm(int iSize)$/;"	f	class:Algorythm
+Algorythm	C:\Users\tokixy56\cpp_study/Sorter/Sorter.hpp	/^class Algorythm$/;"	c
+CC	C:\Users\tokixy56\cpp_study/inc.mak	/^CC		= $(ADDNAME)g++$/;"	m
+CFLAGS	C:\Users\tokixy56\cpp_study/inc.mak	/^CFLAGS	= -Wall$/;"	m
+LD	C:\Users\tokixy56\cpp_study/inc.mak	/^LD		= $(ADDNAME)ld$/;"	m
+LFLAGS	C:\Users\tokixy56\cpp_study/inc.mak	/^LFLAGS	= -static#			すべて静的リンクする$/;"	m
+NM	C:\Users\tokixy56\cpp_study/inc.mak	/^NM		= $(ADDNAME)nm$/;"	m
+OBJCOPY	C:\Users\tokixy56\cpp_study/inc.mak	/^OBJCOPY	= $(ADDNAME)objcopy$/;"	m
+OBJDUMP	C:\Users\tokixy56\cpp_study/inc.mak	/^OBJDUMP	= $(ADDNAME)objdump$/;"	m
+OBJS	C:\Users\tokixy56\cpp_study/makefile	/^OBJS = $(addsuffix .o, $(basename $(shell cygpath -m $(realpath $(SRCS)))))$/;"	m
+RANLIB	C:\Users\tokixy56\cpp_study/inc.mak	/^RANLIB	= $(ADDNAME)ranlib$/;"	m
+SRCS	C:\Users\tokixy56\cpp_study/makefile	/^SRCS	= main.cpp$/;"	m
+STRIP	C:\Users\tokixy56\cpp_study/inc.mak	/^STRIP	= $(ADDNAME)strip$/;"	m
+Sorter	C:\Users\tokixy56\cpp_study/Sorter/Sorter.hpp	/^class Sorter : public Algorythm$/;"	c
+TARGET	C:\Users\tokixy56\cpp_study/makefile	/^TARGET	= alg.exe$/;"	m
+_SORTER_HPP_	C:\Users\tokixy56\cpp_study/Sorter/Sorter.hpp	13;"	d
+get	C:\Users\tokixy56\cpp_study/Sorter/Sorter.cpp	/^int Algorythm::get()$/;"	f	class:Algorythm
+iSize	C:\Users\tokixy56\cpp_study/Sorter/Sorter.hpp	/^		int iSize;$/;"	m	class:Algorythm
+main	C:\Users\tokixy56\cpp_study/main.cpp	/^int main()$/;"	f
+piData	C:\Users\tokixy56\cpp_study/Sorter/Sorter.hpp	/^		int* piData;$/;"	m	class:Algorythm
+show	C:\Users\tokixy56\cpp_study/Sorter/Sorter.cpp	/^int Algorythm::show()$/;"	f	class:Algorythm
+~Algorythm	C:\Users\tokixy56\cpp_study/Sorter/Sorter.cpp	/^Algorythm::~Algorythm()$/;"	f	class:Algorythm

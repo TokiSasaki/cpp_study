@@ -26,25 +26,27 @@
 class Algorythm
 {
 	private:
+	protected:
 		int iSize;
 		int* piData;
 	public:
 		Algorythm();
 		Algorythm(int iSize);
 		~Algorythm();
-//		int get(int iNum);
-//		int set(int iSize, int* piData);
-//		int getSize();
-//		int setSize(int Size);
+		int get(int iIdx);
+		int set(int iIdx, int iData);
+		int getSize();
+		int setSize(int iSize);
 		int show();
 };
 
-//class Sorter : public Algorythm
-//{
-//	public:
-//		Sorter();
-//		~Sorter();
-//}
+class Sorter : public Algorythm
+{
+	public:
+		Sorter();
+		~Sorter();
+		int BubbleSort();
+};
 
 /*****************************************************************************
 	external variables

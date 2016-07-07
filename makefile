@@ -17,7 +17,7 @@ TARGET	= alg.exe
 SRCS	= main.cpp
 SRCS	+= ./Sorter/Sorter.cpp
 
-CFLAGS	+= -I./Sorter
+CFLAGS	+= -I./Sorter -std=c++11
 
 #OBJS = $(addsuffix .o, $(basename $(shell cygpath -m $(realpath $(SRCS)))))
 OBJS = $(addsuffix .o, $(basename $(shell cygpath -m $(realpath $(SRCS)))))

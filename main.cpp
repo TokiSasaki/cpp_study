@@ -13,6 +13,7 @@
 	include, namespace
 *****************************************************************************/
 #include <iostream>
+#include <random>
 #include "Sorter.hpp"
 
 /*****************************************************************************
@@ -47,7 +48,25 @@ using namespace std;
 *****************************************************************************/
 int main()
 {
-	Algorythm alg(10);
-	alg.show();
+	random_device rnd;
+	Sorter srt;
+	int iInSize;
+
+	cout << "Please input data number: ";
+	cin >> iInSize;
+
+	srt.setSize(iInSize);
+
+	for(int i = 0; i < iInSize; i++){
+		srt.set(i, (rnd() % 50000));
+	}
+
+	srt.show();
+
+	cout << "Bubble Sort()" << endl;
+	srt.BubbleSort();
+
+	srt.show();
+
 	return 0;
 }
