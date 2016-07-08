@@ -37,13 +37,13 @@
 
 using namespace std;
 
+namespace alg
+{
 /*****************************************************************************
-	discription	: 
-	argument	: 
-	return		: 
-				: 
-	note		: 
-	update		: 
+	discription	: Constructer
+	argument	: -
+	return		: -
+	note		: -
 *****************************************************************************/
 Algorythm::Algorythm()
 {
@@ -52,12 +52,10 @@ Algorythm::Algorythm()
 }
 
 /*****************************************************************************
-	discription	: 
-	argument	: 
-	return		: 
-				: 
-	note		: 
-	update		: 
+	discription	: Constructer with size
+	argument	: iSize = data size
+	return		: -
+	note		: -
 *****************************************************************************/
 Algorythm::Algorythm(int iSize)
 {
@@ -66,12 +64,10 @@ Algorythm::Algorythm(int iSize)
 }
 
 /*****************************************************************************
-	discription	: 
-	argument	: 
-	return		: 
-				: 
-	note		: 
-	update		: 
+	discription	: Destructer
+	argument	: -
+	return		: -
+	note		: -
 *****************************************************************************/
 Algorythm::~Algorythm()
 {
@@ -80,12 +76,10 @@ Algorythm::~Algorythm()
 }
 
 /*****************************************************************************
-	discription	: 
-	argument	: 
-	return		: 
-				: 
-	note		: 
-	update		: 
+	discription	: Get data at index
+	argument	: iIdx = index
+	return		: 0 = succeed, else = error
+	note		: -
 *****************************************************************************/
 int Algorythm::get(int iIdx)
 {
@@ -98,12 +92,10 @@ int Algorythm::get(int iIdx)
 }
 
 /*****************************************************************************
-	discription	: 
-	argument	: 
-	return		: 
-				: 
-	note		: 
-	update		: 
+	discription	: set data at index
+	argument	: iIdx = index, iData = data
+	return		: 0 = succeed, else = error
+	note		: -
 *****************************************************************************/
 int Algorythm::set(int iIdx, int iData)
 {
@@ -117,12 +109,10 @@ int Algorythm::set(int iIdx, int iData)
 }
 
 /*****************************************************************************
-	discription	: 
-	argument	: 
-	return		: 
-				: 
-	note		: 
-	update		: 
+	discription	: set data at index
+	argument	: iIdx = index, iData = data
+	return		: 0 = succeed, else = error
+	note		: -
 *****************************************************************************/
 int Algorythm::getSize()
 {
@@ -212,3 +202,6 @@ int Sorter::BubbleSort()
 
 	return 0;
 }
+
+} // namespace alg
+
