@@ -253,7 +253,7 @@ paket-files/
 
 
 # object
-.DS *.o
-.DS *.swp
-.DS *.exe
-.DS *.elf
+.o
+.swp
+.exe
+.elf
