@@ -35,7 +35,7 @@ class Algorythm
 		int iSize;
 		int* piData;
 		void prQuickSort(int iFirst, int iTail);
-		void prQuickSort(int iFirst, int iTail);
+		void prMergeSort(int iSize);
 	public:
 		Algorythm();
 		Algorythm(int iSize);

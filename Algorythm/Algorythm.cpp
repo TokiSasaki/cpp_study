@@ -184,7 +184,7 @@ int Algorythm::BubbleSort()
 }
 
 /*****************************************************************************
-	discription	@ Quick sort
+	discription	@ internal quick sort
 	argument	@ iFront = first of data, iBehind = end of data
 	return		@ 0 = succeed, else error
 	note		@ -
@@ -241,6 +241,8 @@ void Algorythm::prQuickSort(int iFront, int iBehind)
 
 	prQuickSort(iFront, j - 1);
 	prQuickSort(j + 1, iBehind);
+
+	return;
 }
 
 /*****************************************************************************
@@ -256,14 +258,24 @@ int Algorythm::QuickSort()
 }
 
 /*****************************************************************************
+	discription	@ internal merge sort
+	argument	@ -
+	return		@ -
+	note		@ -
+*****************************************************************************/
+void Algorythm::prMergeSort(int iSize)
+{
+	return;
+}
+
+/*****************************************************************************
 	discription	@ Merge sort
 	argument	@ -
 	return		@ -
 	note		@ -
 *****************************************************************************/
-int Algorythm::QuickSort()
+int Algorythm::MergeSort()
 {
-	this->prQuickSort(0, this->iSize - 1);
 	return 0;
 }
 
