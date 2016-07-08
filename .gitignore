@@ -261,3 +261,5 @@ paket-files/
 **/*.swp
 **/*.exe
 **/*.elf
+tags
+**/tags
