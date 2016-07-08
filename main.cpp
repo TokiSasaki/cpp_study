@@ -59,6 +59,7 @@ int main()
 		alg.set(i, (rnd() % 50000));
 	}
 
+	
 	alg.show();
 
 	cout << "Bubble Sort()" << endl;
