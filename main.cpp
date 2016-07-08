@@ -1,9 +1,8 @@
 /*****************************************************************************
-	order			: Main
-	compiler		: x86_64-w64-mingw32-gcc (cygwin x64)
-	file name		: main.cpp
-					: 
-	creation date	: 2016-07-07
+	order			@ Main
+	compiler		@ x86_64-w64-mingw32-gcc (cygwin x64)
+	file name		@ main.cpp
+	creation date	@ 2016-07-07
 *****************************************************************************/
 /*
 	History of revision
@@ -14,7 +13,7 @@
 *****************************************************************************/
 #include <iostream>
 #include <random>
-#include "Sorter.hpp"
+#include "Algorythm.hpp"
 
 /*****************************************************************************
 	define
@@ -40,34 +39,36 @@ using namespace std;
 using namespace alg;
 
 /*****************************************************************************
-	discription	: 
-	argument	: 
-	return		: 
-				: 
-	note		: 
-	update		: 
+	discription	@ entry
+	argument	@ -
+	return		@ -
+	note		@ -
 *****************************************************************************/
 int main()
 {
 	random_device rnd;
-	Sorter srt;
+	Algorythm alg;
 	int iInSize;
 
 	cout << "Please input data number: ";
 	cin >> iInSize;
 
-	srt.setSize(iInSize);
+	alg.setSize(iInSize);
 
 	for(int i = 0; i < iInSize; i++){
-		srt.set(i, (rnd() % 50000));
+		alg.set(i, (rnd() % 50000));
 	}
 
-	srt.show();
+	alg.show();
 
 	cout << "Bubble Sort()" << endl;
-	srt.BubbleSort();
+	alg.BubbleSort();
 
-	srt.show();
+	alg.show();
+	cout << "Hit enter key to exit...";
+	cin.sync();	// input stream flush
+	cin.get();	// wait enter key
 
 	return 0;
 }
+
