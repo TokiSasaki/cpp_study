@@ -265,6 +265,26 @@ int Algorythm::QuickSort()
 *****************************************************************************/
 void Algorythm::prMergeSort(int iSize, int* piData, int* piBuf)
 {
+	int iCenter;
+	if(iSize <= 1){
+		return;
+	}
+
+	//truncation(cutoff)
+	iCenter = iSize / 2;
+
+	//divide in the central
+	this->prMergeSort(iCenter, piData, piBuf);
+	this->prMergeSort(iSize - iCenter, piData + iCenter);
+
+	for(int i = 0; i < iCenter; i++){
+		pibuf[i] = piData[i];
+	}
+
+	//TBD
+
+
+	
 	return;
 }
 
@@ -276,9 +296,11 @@ void Algorythm::prMergeSort(int iSize, int* piData, int* piBuf)
 *****************************************************************************/
 int Algorythm::MergeSort()
 {
-	int iBuf[this->iSize];
+	int* piBuf = new int[this->iSize]();
 
-	this->prMergeSort(this->iSize, this->piData, &iBuf[0]);
+	this->prMergeSort(this->iSize, this->piData, piBuf);
+
+	delete [] piBuf;
 
 	return 0;
 }
