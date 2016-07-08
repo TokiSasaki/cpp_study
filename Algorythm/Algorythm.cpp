@@ -263,7 +263,7 @@ int Algorythm::QuickSort()
 	return		@ -
 	note		@ -
 *****************************************************************************/
-void Algorythm::prMergeSort(int iSize)
+void Algorythm::prMergeSort(int iSize, int* piData, int* piBuf)
 {
 	return;
 }
@@ -276,9 +276,12 @@ void Algorythm::prMergeSort(int iSize)
 *****************************************************************************/
 int Algorythm::MergeSort()
 {
+	int iBuf[this->iSize];
+
+	this->prMergeSort(this->iSize, this->piData, &iBuf[0]);
+
 	return 0;
 }
-
 
 
 } // namespace alg

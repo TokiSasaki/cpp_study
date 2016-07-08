@@ -34,8 +34,8 @@ class Algorythm
 	private:
 		int iSize;
 		int* piData;
-		void prQuickSort(int iFirst, int iTail);
-		void prMergeSort(int iSize);
+		void prQuickSort(int iFront, int iBehind);
+		void prMergeSort(int iSize, int* piData, int* piBuf);
 	public:
 		Algorythm();
 		Algorythm(int iSize);
