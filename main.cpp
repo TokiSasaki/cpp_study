@@ -12,7 +12,9 @@
 	include, namespace
 *****************************************************************************/
 #include <iostream>
+#include <iomanip>
 #include <random>
+#include <chrono>
 #include "Algorythm.hpp"
 
 /*****************************************************************************
@@ -63,9 +65,20 @@ int main()
 	alg.show();
 
 	cout << "Bubble Sort()" << endl;
-	alg.BubbleSort();
+
+	const auto start = chrono::system_clock::now(); // 計測開始時間
+
+//	alg.BubbleSort();
+	alg.QuickSort();
+
+	const auto end = chrono::system_clock::now();  // 計測終了時間
+	const auto timeSpan = end - start;
 
 	alg.show();
+
+	cout << "Sorting Time ... :"
+		<< chrono::duration_cast<chrono::milliseconds>(timeSpan).count()
+		<< endl;
 	cout << "Hit enter key to exit...";
 	cin.sync();	// input stream flush
 	cin.get();	// wait enter key

@@ -183,5 +183,91 @@ int Algorythm::BubbleSort()
 	return 0;
 }
 
+/*****************************************************************************
+	discription	@ Quick sort
+	argument	@ iFront = first of data, iBehind = end of data
+	return		@ 0 = succeed, else error
+	note		@ -
+*****************************************************************************/
+void Algorythm::prQuickSort(int iFront, int iBehind)
+{
+	int iDiv, iTmp;
+	int i = iFront;
+	int j = iBehind;
+
+	//recuresive stopper
+	if(iFront >= iBehind){
+		return;
+	}
+
+	//division value
+	//The first data in array is the division value.
+	iDiv = this->piData[iFront];
+	
+	while(true){
+		// "(i <= j)" is a little ugly.
+		while((i <= j) && (this->piData[i] <= iDiv)){
+			i++;
+		}
+		while((i <= j) && (iDiv < this->piData[j])){
+			j--;
+		}
+
+		// !! brady?(increase number of evaluation formula)
+		//while(i <= j){
+		//	if(this->piData[i] <= iDiv){
+		//		i++;
+		//	}
+		//	if(iDiv < this->piData[j]){
+		//		j--;
+		//	}
+		//}
+
+		if(i < j){
+			//interchange
+			iTmp = this->piData[i];
+			this->piData[i] = this->piData[j];
+			this->piData[j] = iTmp;
+		}
+		else{
+			break;
+		}
+	}
+
+	//interchange front data with decrease count data
+	iTmp = this->piData[iFront];
+	this->piData[iFront] = this->piData[j];
+	this->piData[j] = iTmp;
+
+	prQuickSort(iFront, j - 1);
+	prQuickSort(j + 1, iBehind);
+}
+
+/*****************************************************************************
+	discription	@ Quick sort
+	argument	@ -
+	return		@ -
+	note		@ -
+*****************************************************************************/
+int Algorythm::QuickSort()
+{
+	this->prQuickSort(0, this->iSize - 1);
+	return 0;
+}
+
+/*****************************************************************************
+	discription	@ Merge sort
+	argument	@ -
+	return		@ -
+	note		@ -
+*****************************************************************************/
+int Algorythm::QuickSort()
+{
+	this->prQuickSort(0, this->iSize - 1);
+	return 0;
+}
+
+
+
 } // namespace alg
 

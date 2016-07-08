@@ -34,6 +34,8 @@ class Algorythm
 	private:
 		int iSize;
 		int* piData;
+		void prQuickSort(int iFirst, int iTail);
+		void prQuickSort(int iFirst, int iTail);
 	public:
 		Algorythm();
 		Algorythm(int iSize);
@@ -46,6 +48,8 @@ class Algorythm
 
 		// sort algorythm
 		int BubbleSort();
+		int QuickSort();
+		int MergeSort();
 };
 
 } //namespace alg
