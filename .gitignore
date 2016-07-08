@@ -253,7 +253,11 @@ paket-files/
 
 
 # object
-.o
-.swp
-.exe
-.elf
+*.o
+*.swp
+*.exe
+*.elf
+**/*.o
+**/*.swp
+**/*.exe
+**/*.elf
