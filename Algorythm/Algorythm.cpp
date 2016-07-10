@@ -295,11 +295,7 @@ void Algorythm::prMergeSort(int iSize, int* piData, int* piBuf)
 	if(i < iMid){
 		memcpy(&piData[iCnt], &piBuf[i], sizeof(int) * (iMid - i));
 	}
-//	while(i < iMid){
-//		piData[iCnt] = piBuf[i];
-//		iCnt++;
-//		i++;
-//	}
+
 	return;
 }
 
