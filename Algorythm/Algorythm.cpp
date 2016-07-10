@@ -12,6 +12,7 @@
 	include, namespace
 *****************************************************************************/
 #include <iostream>
+#include <string>
 #include "Algorythm.hpp"
 
 namespace alg
@@ -265,26 +266,40 @@ int Algorythm::QuickSort()
 *****************************************************************************/
 void Algorythm::prMergeSort(int iSize, int* piData, int* piBuf)
 {
-	int iCenter;
+	int iMid;
+	int i, j, iCnt;
 	if(iSize <= 1){
 		return;
 	}
 
 	//truncation(cutoff)
-	iCenter = iSize / 2;
+	iMid = iSize / 2;
 
-	//divide in the central
-	this->prMergeSort(iCenter, piData, piBuf);
-	this->prMergeSort(iSize - iCenter, piData + iCenter);
+	//divide in the middle
+	this->prMergeSort(iMid, piData, piBuf);
+	this->prMergeSort(iSize - iMid, piData + iMid, piBuf);
 
-	for(int i = 0; i < iCenter; i++){
-		pibuf[i] = piData[i];
+	memcpy(&piBuf[0], &piData[0], sizeof(int) * iMid);
+
+	for(i = 0, iCnt = 0, j = iMid; (i < iMid) && (j < iSize); iCnt++){
+		if(piBuf[i] <= piData[j]){
+			piData[iCnt] = piBuf[i];
+			i++;
+		}
+		else{
+			piData[iCnt] = piData[j];
+			j++;
+		}
 	}
 
-	//TBD
-
-
-	
+	if(i < iMid){
+		memcpy(&piData[iCnt], &piBuf[i], sizeof(int) * (iMid - i));
+	}
+//	while(i < iMid){
+//		piData[iCnt] = piBuf[i];
+//		iCnt++;
+//		i++;
+//	}
 	return;
 }
 
@@ -296,7 +311,7 @@ void Algorythm::prMergeSort(int iSize, int* piData, int* piBuf)
 *****************************************************************************/
 int Algorythm::MergeSort()
 {
-	int* piBuf = new int[this->iSize]();
+	int* piBuf = new int[(this->iSize / 2) + 1]();
 
 	this->prMergeSort(this->iSize, this->piData, piBuf);
 

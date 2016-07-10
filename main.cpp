@@ -69,7 +69,8 @@ int main()
 	const auto start = chrono::system_clock::now(); // 計測開始時間
 
 //	alg.BubbleSort();
-	alg.QuickSort();
+//	alg.QuickSort();
+	alg.MergeSort();
 
 	const auto end = chrono::system_clock::now();  // 計測終了時間
 	const auto timeSpan = end - start;
