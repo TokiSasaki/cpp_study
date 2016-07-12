@@ -268,6 +268,8 @@ void Algorythm::prMergeSort(int iSize, int* piData, int* piBuf)
 {
 	int iMid;
 	int i, j, iCnt;
+
+	//recursive stopper
 	if(iSize <= 1){
 		return;
 	}
