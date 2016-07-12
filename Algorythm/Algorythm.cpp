@@ -316,6 +316,41 @@ int Algorythm::MergeSort()
 	return 0;
 }
 
+/*****************************************************************************
+	discription	@ Insert sort
+	argument	@ -
+	return		@ -
+	note		@ -
+*****************************************************************************/
+void Algorythm::InsertSort()
+{
+	int iSorted;
+	int iCnt;
+	int iInsert;
+	int iTmp;
+
+	for(iSorted = 0; iSorted < (this->iSize - 1); iSorted++){
+		iInsert = this->piData[iSorted + 1];
+
+		iCnt = 0;
+		// run to the sorted point
+		while(iCnt <= iSorted){
+			if(this->piData[iCnt] > iInsert){
+				break;
+			}
+			iCnt++;
+		}
+
+		// displace(move) to behind the insert point.
+		while(iCnt <= (iSorted + 1)){
+			iTmp = this->piData[iCnt];
+			this->piData[iCnt] = iInsert;
+			iInsert = iTmp;
+			iCnt++;
+		}
+	}
+	return;
+}
 
 } // namespace alg
 

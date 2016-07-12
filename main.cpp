@@ -70,7 +70,8 @@ int main()
 
 //	alg.BubbleSort();
 //	alg.QuickSort();
-	alg.MergeSort();
+//	alg.MergeSort();
+	alg.InsertSort();
 
 	const auto end = chrono::system_clock::now();  // 計測終了時間
 	const auto timeSpan = end - start;

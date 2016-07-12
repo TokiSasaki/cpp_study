@@ -50,6 +50,7 @@ class Algorythm
 		int BubbleSort();
 		int QuickSort();
 		int MergeSort();
+		void InsertSort();
 };
 
 } //namespace alg
