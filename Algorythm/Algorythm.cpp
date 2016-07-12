@@ -344,11 +344,10 @@ void Algorythm::InsertSort()
 		}
 
 		// displace(move) to behind the insert point.
-		while(iCnt <= (iSorted + 1)){
-			iTmp = this->piData[iCnt];
+		if(iCnt <= (iSorted + 1)){
+			iTmp = (iSorted + 1) - iCnt;
+			memmove(&this->piData[iCnt + 1], &this->piData[iCnt], sizeof(int) * iTmp);
 			this->piData[iCnt] = iInsert;
-			iInsert = iTmp;
-			iCnt++;
 		}
 	}
 	return;
