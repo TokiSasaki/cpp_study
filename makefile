@@ -1,17 +1,17 @@
-#####	Makefileのインクルードファイル
-#####	各種Makefileの共通部分の定義など
+#####	include file of makefile
+#####	definition of the common part, etc.
 #include ./inc.mak
 
 #PREFIX = /usr/local
 #BINDIR	= $(PREFIX)/bin
 
-###########	ツール名称とかの先頭につけるやつ
+###########	gcc, binutils prefix
 ARCH	= x86_64-w64-mingw32
 ADDNAME	= $(ARCH)-
 
 #HEADPATH = $(shell cygpath -m $(realpath ..))
 
-###########	利用するツール類の指定
+###########	definition of the using tools
 AR		= $(ADDNAME)ar
 AS		= $(ADDNAME)as
 CC		= $(ADDNAME)g++
@@ -22,24 +22,23 @@ OBJDUMP	= $(ADDNAME)objdump
 RANLIB	= $(ADDNAME)ranlib
 STRIP	= $(ADDNAME)strip
 
-##########	コンパイルオプション(Compile Flags)
-# すべての警告を表示する
-CFLAGS	= -Wall
-#CFLAGS	+= -mh#				H8/300用のコードを出力する
-#CFLAGS	+= -nostdinc#		システムのヘッダファイルを利用しない(stdioなど?)
-#CFLAGS	+= -nostdlib#		システムのライブラリを利用しない(stdlibなど?)
-#CFLAGS	+= -fno-builtin #	コンパイラのビルトイン関数を利用しない
-CFLAGS	+= -I.#				ヘッダファイルの検索先を指定する
-CFLAGS	+= -I./Algorythm#	ヘッダファイルの検索先を指定する
+##########	compile option(Flags)
+CFLAGS	= -Wall#			display all warnings
+#CFLAGS	+= -mh#				output for the H8/300 (binary)code
+#CFLAGS	+= -nostdinc#		not include system header(such as stdio.h?)
+#CFLAGS	+= -nostdlib#		not use system library(such as stdlib.h?)
+#CFLAGS	+= -fno-builtin#	not use the builtin function of compiler
+CFLAGS	+= -I.#				specify the search destination of the header files
+CFLAGS	+= -I./Algorythm#	
 #CFLAGS	+= -I$(HEADPATH)/include
 #CFLAGS	+= -I$(HEADPATH)/daemon
-#CFLAGS	+= -Os#				サイズ節約の最適化を行う
+#CFLAGS	+= -Os#				optimize to minimize size of the execution file
 #CFLAGS	+= -D_H8_3069F_ARCH_
-#CFLAGS += -g#				デバッガを利用する
-#CFLAGS += -mint32#			intを32ビットにすると掛け算/割り算ができなくなる。
-CFLAGS	+= -std=c++11#		c++用の乱数生成器を使用するために指定する
+#CFLAGS += -g#				use debagger
+#CFLAGS += -mint32#			can't multiplication and division if you specify this(32bit)
+CFLAGS	+= -std=c++11#		to use the random fuction of the c++ library
 
-# 以下のような指定もできるが、行コメントを末尾に追加できない
+# be able to write following, but can't write the line comment
 # CFLAGS	= -Wall \
 # 	-mh \
 # 	-nostdinc \
@@ -51,10 +50,10 @@ CFLAGS	+= -std=c++11#		c++用の乱数生成器を使用するために指定す
 ## 	-mint32 \
 ## 	-DKOZOS
 
-##########	リンクオプション(Link Flags)
-LFLAGS	= -static#			すべて静的リンクする
-#LFLAGS	+= -T linker.ld#	リンカ・スクリプトを指定する
-#LFLAGS	+= -L.#				ライブラリの検索先を指定する
+##########	Link Flags
+LFLAGS	= -static#			link all code with the static link
+#LFLAGS	+= -T linker.ld#	specify the linker script
+#LFLAGS	+= -L.#				specify the search destination of the header files
 #LFLAGS	+= -L../common
 
 
@@ -80,6 +79,8 @@ TARGET	= alg.exe
 ##########	コンパイルするソースコード郡
 SRCS	= main.cpp
 SRCS	+= ./Algorythm/Algorythm.cpp
+SRCS	+= ./Algorythm/Sort.cpp
+SRCS	+= ./Algorythm/Search.cpp
 
 #OBJS = $(addsuffix .o, $(basename $(shell cygpath -m $(realpath $(SRCS)))))
 OBJS = $(addsuffix .o, $(basename $(shell cygpath -m $(realpath $(SRCS)))))

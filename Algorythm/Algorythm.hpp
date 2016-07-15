@@ -1,7 +1,7 @@
 /*****************************************************************************
 	order			@ My make sort library
 	compiler		@ x86_64-w64-mingw32-gcc (cygwin x64)
-	file name		@ Sorter.cpp
+	file name		@ Algorythm.cpp
 	creation date	@ 2016-07-05
 *****************************************************************************/
 /*
@@ -51,6 +51,10 @@ class Algorythm
 		int QuickSort();
 		int MergeSort();
 		void InsertSort();
+		void BinaryInsertSort();
+		
+		// search algorythm
+		int Search();
 };
 
 } //namespace alg
