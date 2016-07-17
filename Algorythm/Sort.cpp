@@ -252,7 +252,7 @@ void Algorythm::BinaryInsertSort()
 	int iSrchLeft;
 	int iSrchRight;
 
-	for(iSortedIdx = 0; iSortedIdx < (this->iSize - 1); iSortedIdx++){
+	for(iSortedIdx = 0; iSortedIdx < this->iSize; iSortedIdx++){
 		iInsData = this->piData[iSortedIdx + 1];
 
 		iSrchLeft = 0;
@@ -270,7 +270,7 @@ void Algorythm::BinaryInsertSort()
 		}
 
 		// displace(move) to behind the insert point.
-		if(iSrchLeft <= (iSortedIdx + 1)){
+		if(iSrchLeft <= iSortedIdx){
 			iTmp = (iSortedIdx + 1) - iSrchLeft;
 			memmove(&this->piData[iSrchLeft + 1],
 					&this->piData[iSrchLeft],
