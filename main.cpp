@@ -46,11 +46,19 @@ using namespace alg;
 	return		@ -
 	note		@ -
 *****************************************************************************/
-int main()
+int main(int argc, char* argv[])
 {
 	random_device rnd;
 	Algorythm alg;
 	int iInSize;
+	int iSearch;
+
+	if(argc < 2){
+		cout << "ERROR: too few arguments to function." << endl;
+		return -1;
+	}
+
+	iSearch = atoi(argv[1]);
 
 	cout << "Please input data number: ";
 	cin >> iInSize;
@@ -82,6 +90,9 @@ int main()
 	cout << "Sorting Time ... :"
 		<< chrono::duration_cast<chrono::milliseconds>(timeSpan).count()
 		<< endl;
+
+	alg.LinearSearch(iSearch);
+
 	cout << "Hit enter key to exit...";
 	cin.sync();	// input stream flush
 	cin.get();	// wait enter key

@@ -43,8 +43,18 @@ namespace alg
 	return		@ -
 	note		@ -
 *****************************************************************************/
-int Algorythm::Search()
+int Algorythm::LinearSearch(int iFind)
 {
+	int iIdx, iCnt;
+	for(iIdx = 0, iCnt = 0; iIdx < this->iSize; iIdx++){
+		if(this->piData[iIdx] == iFind){
+			cout << "Index: " << iIdx << endl;
+			iCnt++;
+		}
+	}
+
+	cout << "Count: " << iCnt << endl;
+
 	return 0;
 }
 
