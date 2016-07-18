@@ -12,7 +12,7 @@
 	include, namespace
 *****************************************************************************/
 #include <iostream>
-#include <string>
+#include <string.h>
 #include "Algorythm.hpp"
 
 namespace alg

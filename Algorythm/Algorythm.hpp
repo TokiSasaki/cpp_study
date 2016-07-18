@@ -55,6 +55,7 @@ class Algorythm
 		
 		// search algorythm
 		int LinearSearch(int iFind);
+		int BinarySearch(int iFind);
 };
 
 } //namespace alg

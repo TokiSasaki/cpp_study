@@ -92,6 +92,8 @@ int main(int argc, char* argv[])
 		<< endl;
 
 	alg.LinearSearch(iSearch);
+	
+	cout << "Found index(binary search): " << alg.BinarySearch(iSearch) << endl;
 
 	cout << "Hit enter key to exit...";
 	cin.sync();	// input stream flush

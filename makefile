@@ -6,17 +6,17 @@
 #BINDIR	= $(PREFIX)/bin
 
 ###########	gcc, binutils prefix
-#ifeq (\$(OS),Windows_NT)
-#ARCH	= x86_64-w64-mingw32
-#ADDNAME	= $(ARCH)-
-#endif
+ifeq (\$(OS),Windows_NT)
+ARCH	= x86_64-w64-mingw32
+ADDNAME	= $(ARCH)-
+endif
 
 #HEADPATH = $(shell cygpath -m $(realpath ..))
 
 ###########	definition of the using tools
 AR		= $(ADDNAME)ar
 AS		= $(ADDNAME)as
-CC		= $(ADDNAME)clang++
+CC		= $(ADDNAME)g++
 LD		= $(ADDNAME)ld
 NM		= $(ADDNAME)nm
 OBJCOPY	= $(ADDNAME)objcopy
@@ -84,8 +84,11 @@ SRCS	+= ./Algorythm/Algorythm.cpp
 SRCS	+= ./Algorythm/Sort.cpp
 SRCS	+= ./Algorythm/Search.cpp
 
-#OBJS = $(addsuffix .o, $(basename $(shell cygpath -m $(realpath $(SRCS)))))
+ifeq (\$(OS),Windows_NT)
+OBJS = $(addsuffix .o, $(basename $(shell cygpath -m $(realpath $(SRCS)))))
+else
 OBJS = $(addsuffix .o, $(basename $(realpath $(SRCS))))
+endif
 
 ########## ターゲット部
 # makeコマンドでターゲットを指定しなかった場合
